@@ -32,6 +32,17 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- Math equations in Katex -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+  <style>
+    .helvetica-math {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+    .helvetica-math .katex {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -72,6 +83,7 @@
                         <span>Paper</span>
                       </a>
                     </span>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -84,7 +96,8 @@
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
+                <!-- ArXiv abstract Link
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
@@ -94,6 +107,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
+               -->
             </div>
           </div>
         </div>
@@ -137,40 +151,119 @@ End teaser video -->
 <!-- End paper abstract -->
 
 
-<!-- Image carousel
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
+  <!-- Exploration Efficiency -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Exploration Efficiency</h2>
+            <img src="static/images/state_coverage_fraction_notitle.png" alt="MY ALT TEXT"/>
+            <h2 class="subtitle has-text-centered">
+              Exploration efficiency in the FourRooms environment, as measured by the number of unique states visited for a given number of skill executions. Focused skills explore three times more efficiently than unfocused skills, as measured by the Area Under the Curve (AUC). DUSDi is not applicable to Lipschitz-constrained Skill Discovery (LSD).
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--  End Exploration Efficiency -->
+
+  <!-- Downstream Task Performance
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div id="skill-reward-equation" style="font-size: 1.5em"></div>
+            <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+            <script>
+              katex.render('r_{\\textsf{focused}}(z, h_{t}) = \\left[\\sum_{i \\in \\mathcal{V}_{z}} r_{i}(z, h_{t}^{i})\\right] - \\ell(h_{t}, \\mathcal{V}_{z}^{\\, \\mathsf{c}})',
+                      document.getElementById('skill-reward-equation'),
+                      {
+                        displayMode: true,  // Makes it larger and centered
+                        throwOnError: false
+                      });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   -->
+  <!--  End Downstream Task Performance -->
+
+  <!-- Downstream Task Performance -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Performance in Downstream Tasks</h2>
+            <img src="static/images/downstream_task_fullyspecified.png" alt="MY ALT TEXT"/>
+            <h2 class="subtitle has-text-centered">
+              Learning performance in downstream tasks. Focused skills (solid lines) lead to faster learning and are the only ones which can accomplish the task in MudWorld.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  End Downstream Task Performance -->
+
+  <!-- Underspecified Goals -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Performance with Underspecified Goals</h2>
+            <img src="static/images/underspecified_tasks.png" alt="MY ALT TEXT"/>
+            <h2 class="subtitle has-text-centered">
+              Task performance in ForageWorld and MudWorld when agents are trained with a proxy reward instead of the true reward. Focused skills (solid lines) are the only ones which maximize the true return when only given the proxy reward, meaning that they are the only ones that can automatically avoid making unwanted changes that are not explicit in the agent's goal.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  End Underspecified Goals -->
+
+
+  <!-- Image carousel
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+         <div class="item">
+          <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            First image description.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            Second image description.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+           Third image description.
+         </h2>
+       </div>
        <div class="item">
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Fourth image description.
         </h2>
       </div>
-      <div class="item">
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
-</section>
-End image carousel -->
+  </div>
+  </section>
+  End image carousel -->
 
 
 
@@ -248,16 +341,14 @@ End paper poster -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>
-        @inproceedings{
-        carr2025focused,
-        title={Focused Skill Discovery: Using Per-Factor Empowerment to Control State Variables},
-        author={Jonathan Cola{\c{c}}o Carr and Qinyi Sun and Cameron Allen},
-        booktitle={Reinforcement Learning Conference},
-        year={2025},
-        url={https://openreview.net/forum?id=eM5ZtMijef}
-        }
-        </code></pre>
+      <pre><code>@inproceedings{
+carr2025focused,
+title={Focused Skill Discovery: Learning to Control Specific State Variables while Minimizing Side Effects},
+author={Jonathan Cola{\c{c}}o Carr and Qinyi Sun and Cameron Allen},
+booktitle={Reinforcement Learning Conference},
+year={2025},
+url={https://openreview.net/forum?id=eM5ZtMijef}
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -271,8 +362,6 @@ End paper poster -->
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>
