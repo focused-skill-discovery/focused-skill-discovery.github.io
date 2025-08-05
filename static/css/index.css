@@ -133,5 +133,13 @@ body {
   font-size: smaller;
 }
 
+summary {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+summary::after {
+    font-size: 1.5rem;
+}
 
 
